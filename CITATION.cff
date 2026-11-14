@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the accompanying paper (publication details to be added after proceedings publication)."
+title: "eia930-limited-label-benchmark: code, protocol and saved results"
+type: software
+authors:
+  - family-names: Pandey
+    given-names: Satyam Adharchandra
+    orcid: "https://orcid.org/0009-0002-9127-6960"
+license: MIT
+repository-code: "https://github.com/satyamamarpandey/eia930-limited-label-benchmark-release"
+keywords: [anomaly detection, limited supervision, EIA-930, benchmarking, reproducibility]
+preferred-citation:
+  type: conference-paper
+  title: "Detecting Controlled Errors in EIA-930 Hourly Demand Records Under Limited Labels: A Reproducible Multi-Region Benchmark"
+  authors:
+    - family-names: Pandey
+      given-names: Satyam Adharchandra
+  collection-title: "Learning Representations with Limited Supervision (LRLS) workshop, IEEE BigData 2026"
+  year: 2026
+  notes: "Accepted for presentation; not yet published in the proceedings. Citation details will be added after publication."
+# DOI, volume, pages and publisher details are intentionally omitted until the paper is published

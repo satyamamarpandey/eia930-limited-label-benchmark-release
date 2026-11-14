@@ -1,0 +1,345 @@
+{
+  "stage": "final",
+  "eval_split": "test",
+  "started": "2026-10-22T21:44:37-0400",
+  "finished": "2026-10-22T21:48:17-0400",
+  "wall_seconds": 220.4714329999406,
+  "protocol_config_sha256": "0dd2e911745867f7b476eaddf4d404d6cd48c6f1afa5474cc4d4004623db2122",
+  "protocol_version": "1.1",
+  "inputs": [
+    {
+      "file": "EIA930_BALANCE_2024_Jan_Jun.csv",
+      "sha256": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10"
+    },
+    {
+      "file": "EIA930_BALANCE_2024_Jul_Dec.csv",
+      "sha256": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f"
+    }
+  ],
+  "seeds": [
+    11,
+    23,
+    37,
+    41,
+    53
+  ],
+  "label_draws_per_seed": 5,
+  "splits": {
+    "train": [
+      "2024-01-01 01:00",
+      "2024-07-01 00:00"
+    ],
+    "val": [
+      "2024-07-01 01:00",
+      "2024-09-01 00:00"
+    ],
+    "test": [
+      "2024-09-01 01:00",
+      "2025-01-01 23:00"
+    ]
+  },
+  "variants": [
+    {
+      "name": "primary",
+      "conditions": [
+        "none",
+        "mcar5",
+        "mcar15",
+        "block5",
+        "block15"
+      ],
+      "keep_scores": true
+    },
+    {
+      "name": "tuned",
+      "regime": "tuned",
+      "conditions": [
+        "none",
+        "mcar5",
+        "mcar15",
+        "block5",
+        "block15"
+      ]
+    },
+    {
+      "name": "abl_no_residual",
+      "feature_set": "no_residual",
+      "methods": [
+        "iforest",
+        "pu"
+      ],
+      "conditions": [
+        "none",
+        "mcar15",
+        "block15"
+      ]
+    },
+    {
+      "name": "abl_no_missing_ind",
+      "feature_set": "no_missing_ind",
+      "methods": [
+        "iforest",
+        "pu"
+      ],
+      "conditions": [
+        "none",
+        "mcar15",
+        "block15"
+      ]
+    },
+    {
+      "name": "abl_labels_only",
+      "u_share": 0.0,
+      "methods": [
+        "pu"
+      ],
+      "conditions": [
+        "none",
+        "mcar15"
+      ]
+    },
+    {
+      "name": "contam_2",
+      "n_train": 2,
+      "conditions": [
+        "none"
+      ],
+      "budgets": [
+        8,
+        32
+      ]
+    },
+    {
+      "name": "contam_10",
+      "n_train": 10,
+      "conditions": [
+        "none"
+      ],
+      "budgets": [
+        8,
+        32,
+        128
+      ]
+    },
+    {
+      "name": "holdout_spike",
+      "exclude_families": [
+        "spike"
+      ],
+      "methods": [
+        "pu"
+      ],
+      "budgets": [
+        32
+      ],
+      "conditions": [
+        "none"
+      ]
+    },
+    {
+      "name": "holdout_level_shift",
+      "exclude_families": [
+        "level_shift"
+      ],
+      "methods": [
+        "pu"
+      ],
+      "budgets": [
+        32
+      ],
+      "conditions": [
+        "none"
+      ]
+    },
+    {
+      "name": "holdout_drift",
+      "exclude_families": [
+        "drift"
+      ],
+      "methods": [
+        "pu"
+      ],
+      "budgets": [
+        32
+      ],
+      "conditions": [
+        "none"
+      ]
+    },
+    {
+      "name": "holdout_flatline",
+      "exclude_families": [
+        "flatline"
+      ],
+      "methods": [
+        "pu"
+      ],
+      "budgets": [
+        32
+      ],
+      "conditions": [
+        "none"
+      ]
+    },
+    {
+      "name": "holdout_timing",
+      "exclude_families": [
+        "timing"
+      ],
+      "methods": [
+        "pu"
+      ],
+      "budgets": [
+        32
+      ],
+      "conditions": [
+        "none"
+      ]
+    }
+  ],
+  "cells": 625,
+  "counts": {
+    "primary": {
+      "cells": 125,
+      "result_rows": 2125,
+      "failed_cells": 0
+    },
+    "tuned": {
+      "cells": 125,
+      "result_rows": 2125,
+      "failed_cells": 0
+    },
+    "abl_no_residual": {
+      "cells": 75,
+      "result_rows": 1200,
+      "failed_cells": 0
+    },
+    "abl_no_missing_ind": {
+      "cells": 75,
+      "result_rows": 1200,
+      "failed_cells": 0
+    },
+    "abl_labels_only": {
+      "cells": 50,
+      "result_rows": 750,
+      "failed_cells": 0
+    },
+    "contam_2": {
+      "cells": 25,
+      "result_rows": 300,
+      "failed_cells": 0
+    },
+    "contam_10": {
+      "cells": 25,
+      "result_rows": 425,
+      "failed_cells": 0
+    },
+    "holdout_spike": {
+      "cells": 25,
+      "result_rows": 125,
+      "failed_cells": 0
+    },
+    "holdout_level_shift": {
+      "cells": 25,
+      "result_rows": 125,
+      "failed_cells": 0
+    },
+    "holdout_drift": {
+      "cells": 25,
+      "result_rows": 125,
+      "failed_cells": 0
+    },
+    "holdout_flatline": {
+      "cells": 25,
+      "result_rows": 125,
+      "failed_cells": 0
+    },
+    "holdout_timing": {
+      "cells": 25,
+      "result_rows": 125,
+      "failed_cells": 0
+    }
+  },
+  "errors": [],
+  "warnings": {},
+  "environment": {
+    "python": "3.12.15 (main, Oct  9 2026, 15:21:55) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "machine": "AMD64",
+    "processor": "AMD64 Family 25 Model 124 Stepping 0, AuthenticAMD",
+    "cpu_count": 12,
+    "gpu": "not used",
+    "packages": {
+      "numpy": "2.5.4",
+      "pandas": "3.1.0",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "matplotlib": "3.11.2",
+      "pyyaml": "6.0.3",
+      "pytest": "9.1.1"
+    }
+  },
+  "hyperparameters": {
+    "stat": {
+      "components": [
+        "seasonal",
+        "diff"
+      ]
+    },
+    "iforest": {
+      "n_estimators": 200,
+      "max_samples": 256,
+      "max_features": 1.0
+    },
+    "pu_logreg": {
+      "C": 1.0,
+      "unlabeled_weight_share": 0.5,
+      "max_iter": 2000
+    },
+    "label_budgets": [
+      8,
+      32,
+      128
+    ]
+  },
+  "tuning_grid": {
+    "stat": {
+      "components": [
+        [
+          "seasonal"
+        ],
+        [
+          "seasonal",
+          "diff"
+        ],
+        [
+          "seasonal",
+          "weekly",
+          "diff"
+        ]
+      ]
+    },
+    "iforest": {
+      "n_estimators": [
+        100,
+        300
+      ],
+      "max_samples": [
+        256,
+        1024
+      ],
+      "max_features": [
+        0.5,
+        1.0
+      ]
+    },
+    "pu_logreg": {
+      "C": [
+        0.01,
+        0.1,
+        1.0,
+        10.0
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "frozen_at_local": "2026-10-22T21:44:31-0400",
+  "statement": "Amendment v1.1 frozen after the v1.0 test run; see PROTOCOL_CHANGES.md. No detector, threshold or metric specification was changed.",
+  "protocol_config_sha256": "0dd2e911745867f7b476eaddf4d404d6cd48c6f1afa5474cc4d4004623db2122",
+  "files": {
+    "03_CODE/configs/protocol.yaml": "0dd2e911745867f7b476eaddf4d404d6cd48c6f1afa5474cc4d4004623db2122",
+    "02_RESEARCH_PROTOCOL/PROTOCOL.md": "9c7734976132adb66edfd9819da6214cb87399cc15e04b11577edb3d944136b9",
+    "03_CODE/requirements.lock.txt": "e2624f30b343b2788b4289e60c15ab97ae132005c30fdc9d3988898846bd4e57",
+    "03_CODE/scripts/run_experiment.py": "7fd4e3dd068a9547cb6e72c188e365e060953f421e811498bd92227216c4334f",
+    "03_CODE/scripts/freeze_protocol.py": "0f4889d1d2c22df9642b7f496a140ac5d5138fe8b3c80de6d08fdb25cc931f75",
+    "03_CODE/gridbench/__init__.py": "445f1b91b33b753a7f1288a704e68ee3b76a4004d8beae36a196d1fe17751a88",
+    "03_CODE/gridbench/config.py": "c15d6b771908810d92c66f177d34dbfc5f8ccbd2e26d43cab0592cef9e3ec876",
+    "03_CODE/gridbench/detectors.py": "57e0ddf427259ecb77ff2e3a643b8e85c1599b3042d58af74190c9ef48869018",
+    "03_CODE/gridbench/experiment.py": "a1947eaac7f1a343f9ec9bca5b83f716a47208c9f922c4a13469b42247947b76",
+    "03_CODE/gridbench/features.py": "f1191f384cc545db0aa6c2580d706a0259ad1a372876e992b84df1ac7ec586ec",
+    "03_CODE/gridbench/inject.py": "de612de99fef1663704bc66b7809edc9f3d35dfdecd190ba58fda5b31dbf00a5",
+    "03_CODE/gridbench/io.py": "4c7541502a241367191b8133a6f3ab0ad8d7ff904b1805f7fe3aeb545ea21b83",
+    "03_CODE/gridbench/metrics.py": "e2bcb4b4948ab8431f5e531648792d60a0de0cc2d9eafcd965bf3f2e992e410d",
+    "03_CODE/gridbench/stats.py": "25746783c2271117c98c78f86ecf0069edaf34dac8062b8ab485c4a18dfb9be5",
+    "02_RESEARCH_PROTOCOL/PROTOCOL_CHANGES.md": "d19557c2b4e7615505f5d4e0190c9d92d1c0d3823c82d5ed51ede9b9aeb6bf5f"
+  },
+  "protocol_version": "1.1"
+}

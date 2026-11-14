@@ -1,0 +1,1 @@
+Output folder of the table and figure scripts (the manuscript itself is not part of this repository).

@@ -1,0 +1,78 @@
+# Experimental protocol configuration (machine-readable; see 02_RESEARCH_PROTOCOL/PROTOCOL.md).
+# Paths are relative to the project root (D:\Research Paper\Paper4_Grid_Telemetry).
+protocol_version: "1.1"   # v1.1 amendment: see 02_RESEARCH_PROTOCOL/PROTOCOL_CHANGES.md
+
+data:
+  inputs:
+    - data/EIA930_BALANCE_2024_Jan_Jun.csv
+    - data/EIA930_BALANCE_2024_Jul_Dec.csv
+  authorities: [CISO, ERCO, NYIS, PJM, SWPP]
+  target_variable: "Demand (MW)"   # as reported; EIA imputed/adjusted columns used only for auditing
+  min_valid_fraction_per_split: 0.80
+  inclusion_rules:
+    - "Canonical time index is the hour-ending UTC timestamp ('UTC Time at End of Hour'); rows are de-duplicated on (BA, UTC) only if exact duplicates (none found)."
+    - "Reported 'Demand (MW)' is the analysis variable. Blank values are kept as missing (never zero-filled)."
+    - "Non-positive reported demand (0 MW) is physically invalid for an interconnection-scale BA aggregate and is treated as naturally invalid (missing)."
+    - "Naturally invalid hours are not scored, not labeled, and never used as injection sites."
+    - "Extreme positive demand values (e.g., heat-wave peaks) are retained; no outlier trimming of the background."
+    - "EIA 'Demand Forecast', 'Net Generation', and imputed/adjusted columns are not detector inputs (leakage/scope control); they are used only for the data-quality audit."
+    - "The first 14 days (336 h) of each series are a feature warm-up period and are excluded from model fitting."
+
+splits:   # inclusive bounds on hour-ending UTC timestamps
+  train: ["2024-01-01 01:00", "2024-07-01 00:00"]
+  val:   ["2024-07-01 01:00", "2024-09-01 00:00"]
+  test:  ["2024-09-01 01:00", "2025-01-01 23:00"]
+warmup_hours: 336
+
+seeds: [11, 23, 37, 41, 53]
+label_draws_per_seed: 5
+
+injection:
+  # events per fault family per split; each family cycles through the three severity tiers
+  events_per_family: {train: 6, val: 2, test: 3}
+  min_gap_hours: 24            # minimum gap between injected events (no overlap)
+  boundary_buffer_hours: 48    # events kept away from split boundaries
+  require_history_hours: 168   # events not placed in first week of the series
+  families:
+    spike:      {length: [1, 1], tiers: {low: 0.05, medium: 0.10, high: 0.20}}   # multiplicative magnitude
+    level_shift: {length: [6, 12], tiers: {low: 0.03, medium: 0.06, high: 0.12}}   # multiplicative offset
+    drift:      {length: [12, 24], tiers: {low: 0.05, medium: 0.10, high: 0.20}}   # peak deviation at end of ramp
+    flatline:   {tiers: {low: [3, 4], medium: [6, 8], high: [12, 16]}}             # stale hours (length range)
+    timing:     {length: [6, 12], tiers: {low: 1, medium: 2, high: 3}}             # shift in hours (sign random)
+
+missingness:   # background (nuisance) missingness, drawn independently of injections (v1.1)
+  protect_injected_hours: false   # v1.0 used true, which leaked labels through missingness indicators
+  conditions:
+    - {name: none,    rate: 0.00, mechanism: none}
+    - {name: mcar5,   rate: 0.05, mechanism: mcar}
+    - {name: mcar15,  rate: 0.15, mechanism: mcar}
+    - {name: block5,  rate: 0.05, mechanism: block}
+    - {name: block15, rate: 0.15, mechanism: block}
+  block_length: [3, 12]
+
+features:
+  seasonal_days: 7
+  weekly_lags: 4
+  vol_window: 24
+  stale_cap: 24
+
+methods:
+  stat:      {components: [seasonal, diff]}
+  iforest:   {n_estimators: 200, max_samples: 256, max_features: 1.0}
+  pu_logreg: {C: 1.0, unlabeled_weight_share: 0.5, max_iter: 2000}
+  label_budgets: [8, 32, 128]   # total expert-verified hour labels; half positive, half verified-normal
+
+thresholds:
+  primary_alert_rate: 0.02      # label-free: (1 - rate) quantile of validation scores
+  sensitivity_alert_rates: [0.01, 0.05]
+  ranking_fpr: 0.01             # TPR at 1% FPR, a ranking metric computed on test
+
+tuning:   # SECONDARY regime: uses validation injection labels (outside the label budget)
+  stat:      {components: [[seasonal], [seasonal, diff], [seasonal, weekly, diff]]}
+  iforest:   {n_estimators: [100, 300], max_samples: [256, 1024], max_features: [0.5, 1.0]}
+  pu_logreg: {C: [0.01, 0.1, 1.0, 10.0]}
+
+ablations:
+  contamination_events_per_family: [2, 6, 10]
+  bootstrap_reps: 10000
+  bootstrap_seed: 2026

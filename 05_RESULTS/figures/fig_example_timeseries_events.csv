@@ -1,0 +1,6 @@
+event_id,split,family,tier,severity,sign,start,length,n_altered,start_utc_end,end_utc_end,ba,seed,n_train_events_per_family
+42,test,drift,medium,0.1,-1,6585,13,13,2024-10-01 15:00:00,2024-10-02 03:00:00,PJM,11,6
+43,test,flatline,medium,6.0,-1,6677,6,6,2024-10-05 11:00:00,2024-10-05 16:00:00,PJM,11,6
+44,test,level_shift,low,0.03,1,6964,6,6,2024-10-17 10:00:00,2024-10-17 15:00:00,PJM,11,6
+45,test,drift,high,0.2,1,7131,15,15,2024-10-24 09:00:00,2024-10-24 23:00:00,PJM,11,6
+46,test,timing,medium,2.0,-1,7192,8,8,2024-10-26 22:00:00,2024-10-27 05:00:00,PJM,11,6

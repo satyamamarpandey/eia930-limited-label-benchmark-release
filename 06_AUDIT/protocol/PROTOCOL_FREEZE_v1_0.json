@@ -1,0 +1,20 @@
+{
+  "frozen_at_local": "2026-10-22T21:33:25-0400",
+  "statement": "Frozen before any test-period (Sep-Dec 2024) detection metric was computed. Prior runs: source audit; validation-only development runs (04_RESULTS/dev*, eval_split=val).",
+  "protocol_config_sha256": "1e2d6a4a713015247438eba2189683e03d2fb3ff65fa1915d61407e3bb1b8037",
+  "files": {
+    "03_CODE/configs/protocol.yaml": "1e2d6a4a713015247438eba2189683e03d2fb3ff65fa1915d61407e3bb1b8037",
+    "02_RESEARCH_PROTOCOL/PROTOCOL.md": "67d4abea4baffbaaf3deb5556c4f93c69e7b8426c68ddebcbcb576978fd774ca",
+    "03_CODE/requirements.lock.txt": "e2624f30b343b2788b4289e60c15ab97ae132005c30fdc9d3988898846bd4e57",
+    "03_CODE/scripts/run_experiment.py": "7fd4e3dd068a9547cb6e72c188e365e060953f421e811498bd92227216c4334f",
+    "03_CODE/gridbench/__init__.py": "445f1b91b33b753a7f1288a704e68ee3b76a4004d8beae36a196d1fe17751a88",
+    "03_CODE/gridbench/config.py": "c15d6b771908810d92c66f177d34dbfc5f8ccbd2e26d43cab0592cef9e3ec876",
+    "03_CODE/gridbench/detectors.py": "57e0ddf427259ecb77ff2e3a643b8e85c1599b3042d58af74190c9ef48869018",
+    "03_CODE/gridbench/experiment.py": "2e44a9871c383014a6144f6c7f3dfb313b476b627b692cb86d35b8ab615a5e5f",
+    "03_CODE/gridbench/features.py": "f1191f384cc545db0aa6c2580d706a0259ad1a372876e992b84df1ac7ec586ec",
+    "03_CODE/gridbench/inject.py": "7dc768f2127d6db226ebbc9ff33639f00398c6a1f7dd40a15b1357b38e9afdb6",
+    "03_CODE/gridbench/io.py": "4c7541502a241367191b8133a6f3ab0ad8d7ff904b1805f7fe3aeb545ea21b83",
+    "03_CODE/gridbench/metrics.py": "e2bcb4b4948ab8431f5e531648792d60a0de0cc2d9eafcd965bf3f2e992e410d",
+    "03_CODE/gridbench/stats.py": "25746783c2271117c98c78f86ecf0069edaf34dac8062b8ab485c4a18dfb9be5"
+  }
+}

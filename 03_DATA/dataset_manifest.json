@@ -1,0 +1,445 @@
+{
+  "source": "U.S. Energy Information Administration, Form EIA-930 Hourly Electric Grid Monitor, BALANCE six-month files for 2024",
+  "documentation": "https://www.eia.gov/electricity/930-content/about.html",
+  "files": [
+    {
+      "file": "EIA930_BALANCE_2024_Jan_Jun.csv",
+      "path_relative_to_root": "03_DATA/raw/EIA930_BALANCE_2024_Jan_Jun.csv",
+      "bytes": 41742812,
+      "sha256": "26768c495c3ba987e29d79df2e40d4e741f9dbcff086f53c12ff774465756a10",
+      "encoding": "ASCII (UTF-8 compatible); comma-delimited; double-quoted header; 1 header row",
+      "rows": 266398,
+      "columns": 44,
+      "n_balancing_authorities": 61,
+      "data_date_min": "2024-01-01",
+      "data_date_max": "2024-06-30",
+      "utc_end_min": "2024-01-01 06:00:00",
+      "utc_end_max": "2024-07-01 07:00:00",
+      "rows_per_target_ba": {
+        "CISO": 4367,
+        "ERCO": 4367,
+        "NYIS": 4367,
+        "PJM": 4367,
+        "SWPP": 4367
+      },
+      "target_ba_local_days_not_24h": [
+        {
+          "Balancing Authority": "CISO",
+          "Data Date": "03/10/2024",
+          "local_hours": 23
+        },
+        {
+          "Balancing Authority": "ERCO",
+          "Data Date": "03/10/2024",
+          "local_hours": 23
+        },
+        {
+          "Balancing Authority": "NYIS",
+          "Data Date": "03/10/2024",
+          "local_hours": 23
+        },
+        {
+          "Balancing Authority": "PJM",
+          "Data Date": "03/10/2024",
+          "local_hours": 23
+        },
+        {
+          "Balancing Authority": "SWPP",
+          "Data Date": "03/10/2024",
+          "local_hours": 23
+        }
+      ]
+    },
+    {
+      "file": "EIA930_BALANCE_2024_Jul_Dec.csv",
+      "path_relative_to_root": "03_DATA/raw/EIA930_BALANCE_2024_Jul_Dec.csv",
+      "bytes": 47928993,
+      "sha256": "a602a8e577cfdd2fa3083413eaa4dd8ba7f0d2b26a2986f8f6d22917465ea49f",
+      "encoding": "ASCII (UTF-8 compatible); comma-delimited; double-quoted header; 1 header row",
+      "rows": 269426,
+      "columns": 65,
+      "n_balancing_authorities": 61,
+      "data_date_min": "2024-07-01",
+      "data_date_max": "2024-12-31",
+      "utc_end_min": "2024-07-01 05:00:00",
+      "utc_end_max": "2025-01-01 08:00:00",
+      "rows_per_target_ba": {
+        "CISO": 4417,
+        "ERCO": 4417,
+        "NYIS": 4417,
+        "PJM": 4417,
+        "SWPP": 4417
+      },
+      "target_ba_local_days_not_24h": [
+        {
+          "Balancing Authority": "CISO",
+          "Data Date": "11/03/2024",
+          "local_hours": 25
+        },
+        {
+          "Balancing Authority": "ERCO",
+          "Data Date": "11/03/2024",
+          "local_hours": 25
+        },
+        {
+          "Balancing Authority": "NYIS",
+          "Data Date": "11/03/2024",
+          "local_hours": 25
+        },
+        {
+          "Balancing Authority": "PJM",
+          "Data Date": "11/03/2024",
+          "local_hours": 25
+        },
+        {
+          "Balancing Authority": "SWPP",
+          "Data Date": "11/03/2024",
+          "local_hours": 25
+        }
+      ]
+    }
+  ],
+  "schema_comparison": {
+    "common_columns": 35,
+    "only_in_EIA930_BALANCE_2024_Jan_Jun.csv": [
+      "Net Generation (MW) from Hydropower and Pumped Storage",
+      "Net Generation (MW) from Hydropower and Pumped Storage (Adjusted)",
+      "Net Generation (MW) from Hydropower and Pumped Storage (Imputed)",
+      "Net Generation (MW) from Solar",
+      "Net Generation (MW) from Solar (Adjusted)",
+      "Net Generation (MW) from Solar (Imputed)",
+      "Net Generation (MW) from Wind",
+      "Net Generation (MW) from Wind (Adjusted)",
+      "Net Generation (MW) from Wind (Imputed)"
+    ],
+    "only_in_EIA930_BALANCE_2024_Jul_Dec.csv": [
+      "Net Generation (MW) from Battery Storage",
+      "Net Generation (MW) from Battery Storage (Adjusted)",
+      "Net Generation (MW) from Battery Storage (Imputed)",
+      "Net Generation (MW) from Geothermal",
+      "Net Generation (MW) from Geothermal (Adjusted)",
+      "Net Generation (MW) from Geothermal (Imputed)",
+      "Net Generation (MW) from Hydropower Excluding Pumped Storage",
+      "Net Generation (MW) from Hydropower Excluding Pumped Storage (Adjusted)",
+      "Net Generation (MW) from Hydropower Excluding Pumped Storage (Imputed)",
+      "Net Generation (MW) from Other Energy Storage",
+      "Net Generation (MW) from Other Energy Storage (Adjusted)",
+      "Net Generation (MW) from Other Energy Storage (Imputed)",
+      "Net Generation (MW) from Pumped Storage",
+      "Net Generation (MW) from Pumped Storage  (Adjusted)",
+      "Net Generation (MW) from Pumped Storage (Imputed)",
+      "Net Generation (MW) from Solar with Integrated Battery Storage",
+      "Net Generation (MW) from Solar with Integrated Battery Storage (Imputed)",
+      "Net Generation (MW) from Solar witho Integrated Battery Storage (Adjusted)",
+      "Net Generation (MW) from Solar without Integrated Battery Storage",
+      "Net Generation (MW) from Solar without Integrated Battery Storage (Adjusted)",
+      "Net Generation (MW) from Solar without Integrated Battery Storage (Imputed)",
+      "Net Generation (MW) from Unknown Energy Storage",
+      "Net Generation (MW) from Unknown Energy Storage (Adjusted)",
+      "Net Generation (MW) from Unknown Energy Storage (Imputed)",
+      "Net Generation (MW) from Wind with Integrated Battery Storage",
+      "Net Generation (MW) from Wind with Integrated Battery Storage (Adjusted)",
+      "Net Generation (MW) from Wind with Integrated Battery Storage (Imputed)",
+      "Net Generation (MW) from Wind without Integrated Battery Storage",
+      "Net Generation (MW) from Wind without Integrated Battery Storage (Adjusted)",
+      "Net Generation (MW) from Wind without Integrated Battery Storage (Imputed)"
+    ],
+    "required_columns_present_in_both": true
+  },
+  "target_authorities": [
+    "CISO",
+    "ERCO",
+    "NYIS",
+    "PJM",
+    "SWPP"
+  ],
+  "authority_codes_verified_present": {
+    "CISO": true,
+    "ERCO": true,
+    "NYIS": true,
+    "PJM": true,
+    "SWPP": true
+  },
+  "time_index": "UTC Time at End of Hour (hour-ending, UTC)",
+  "utc_minus_local_offset_hours_counts": {
+    "CISO": {
+      "-8": 3073,
+      "-7": 5711
+    },
+    "ERCO": {
+      "-6": 3073,
+      "-5": 5711
+    },
+    "NYIS": {
+      "-5": 3073,
+      "-4": 5711
+    },
+    "PJM": {
+      "-5": 3073,
+      "-4": 5711
+    },
+    "SWPP": {
+      "-6": 3073,
+      "-5": 5711
+    }
+  },
+  "integrity": {
+    "CISO": {
+      "rows": 8784,
+      "utc_end_first": "2024-01-01 09:00:00",
+      "utc_end_last": "2025-01-01 08:00:00",
+      "expected_hours_in_span": 8784,
+      "duplicate_utc_rows": 0,
+      "conflicting_duplicate_hours": 0,
+      "missing_hours_in_span": 0,
+      "demand_blank": 48,
+      "demand_nonpositive": 0,
+      "forecast_blank": 49,
+      "netgen_blank": 48,
+      "demand_imputed_nonblank": 24,
+      "demand_adjusted_blank": 24,
+      "adjusted_differs_from_reported": 0,
+      "demand_min": 14794.0,
+      "demand_median": 24526.5,
+      "demand_max": 47571.0
+    },
+    "ERCO": {
+      "rows": 8784,
+      "utc_end_first": "2024-01-01 07:00:00",
+      "utc_end_last": "2025-01-01 06:00:00",
+      "expected_hours_in_span": 8784,
+      "duplicate_utc_rows": 0,
+      "conflicting_duplicate_hours": 0,
+      "missing_hours_in_span": 0,
+      "demand_blank": 0,
+      "demand_nonpositive": 0,
+      "forecast_blank": 0,
+      "netgen_blank": 0,
+      "demand_imputed_nonblank": 0,
+      "demand_adjusted_blank": 0,
+      "adjusted_differs_from_reported": 0,
+      "demand_min": 36190.0,
+      "demand_median": 49851.0,
+      "demand_max": 85544.0
+    },
+    "NYIS": {
+      "rows": 8784,
+      "utc_end_first": "2024-01-01 06:00:00",
+      "utc_end_last": "2025-01-01 05:00:00",
+      "expected_hours_in_span": 8784,
+      "duplicate_utc_rows": 0,
+      "conflicting_duplicate_hours": 0,
+      "missing_hours_in_span": 0,
+      "demand_blank": 0,
+      "demand_nonpositive": 3,
+      "forecast_blank": 0,
+      "netgen_blank": 0,
+      "demand_imputed_nonblank": 0,
+      "demand_adjusted_blank": 0,
+      "adjusted_differs_from_reported": 0,
+      "demand_min": 0.0,
+      "demand_median": 16698.0,
+      "demand_max": 28990.0
+    },
+    "PJM": {
+      "rows": 8784,
+      "utc_end_first": "2024-01-01 06:00:00",
+      "utc_end_last": "2025-01-01 05:00:00",
+      "expected_hours_in_span": 8784,
+      "duplicate_utc_rows": 0,
+      "conflicting_duplicate_hours": 0,
+      "missing_hours_in_span": 0,
+      "demand_blank": 47,
+      "demand_nonpositive": 0,
+      "forecast_blank": 48,
+      "netgen_blank": 47,
+      "demand_imputed_nonblank": 46,
+      "demand_adjusted_blank": 1,
+      "adjusted_differs_from_reported": 0,
+      "demand_min": 56260.0,
+      "demand_median": 90186.0,
+      "demand_max": 153121.0
+    },
+    "SWPP": {
+      "rows": 8784,
+      "utc_end_first": "2024-01-01 07:00:00",
+      "utc_end_last": "2025-01-01 06:00:00",
+      "expected_hours_in_span": 8784,
+      "duplicate_utc_rows": 0,
+      "conflicting_duplicate_hours": 0,
+      "missing_hours_in_span": 0,
+      "demand_blank": 1,
+      "demand_nonpositive": 0,
+      "forecast_blank": 0,
+      "netgen_blank": 1,
+      "demand_imputed_nonblank": 1,
+      "demand_adjusted_blank": 0,
+      "adjusted_differs_from_reported": 0,
+      "demand_min": 23816.0,
+      "demand_median": 31544.0,
+      "demand_max": 54247.0
+    }
+  },
+  "split_coverage": {
+    "CISO": {
+      "train": {
+        "hours": 4360,
+        "natural_invalid": 0,
+        "valid_fraction": 1.0
+      },
+      "val": {
+        "hours": 1488,
+        "natural_invalid": 0,
+        "valid_fraction": 1.0
+      },
+      "test": {
+        "hours": 2936,
+        "natural_invalid": 48,
+        "valid_fraction": 0.983651
+      }
+    },
+    "ERCO": {
+      "train": {
+        "hours": 4362,
+        "natural_invalid": 0,
+        "valid_fraction": 1.0
+      },
+      "val": {
+        "hours": 1488,
+        "natural_invalid": 0,
+        "valid_fraction": 1.0
+      },
+      "test": {
+        "hours": 2934,
+        "natural_invalid": 0,
+        "valid_fraction": 1.0
+      }
+    },
+    "NYIS": {
+      "train": {
+        "hours": 4363,
+        "natural_invalid": 1,
+        "valid_fraction": 0.999771
+      },
+      "val": {
+        "hours": 1488,
+        "natural_invalid": 0,
+        "valid_fraction": 1.0
+      },
+      "test": {
+        "hours": 2933,
+        "natural_invalid": 2,
+        "valid_fraction": 0.999318
+      }
+    },
+    "PJM": {
+      "train": {
+        "hours": 4363,
+        "natural_invalid": 22,
+        "valid_fraction": 0.994958
+      },
+      "val": {
+        "hours": 1488,
+        "natural_invalid": 0,
+        "valid_fraction": 1.0
+      },
+      "test": {
+        "hours": 2933,
+        "natural_invalid": 25,
+        "valid_fraction": 0.991476
+      }
+    },
+    "SWPP": {
+      "train": {
+        "hours": 4362,
+        "natural_invalid": 0,
+        "valid_fraction": 1.0
+      },
+      "val": {
+        "hours": 1488,
+        "natural_invalid": 1,
+        "valid_fraction": 0.999328
+      },
+      "test": {
+        "hours": 2934,
+        "natural_invalid": 0,
+        "valid_fraction": 1.0
+      }
+    }
+  },
+  "natural": {
+    "CISO": {
+      "exact_repeat_hours": 1,
+      "exact_repeat_runs": 1,
+      "natural_suspect_hours": 0,
+      "natural_suspect_train": 0,
+      "exact_repeat_train": 1,
+      "natural_suspect_val": 0,
+      "exact_repeat_val": 0,
+      "natural_suspect_test": 0,
+      "exact_repeat_test": 0
+    },
+    "ERCO": {
+      "exact_repeat_hours": 2,
+      "exact_repeat_runs": 2,
+      "natural_suspect_hours": 0,
+      "natural_suspect_train": 0,
+      "exact_repeat_train": 0,
+      "natural_suspect_val": 0,
+      "exact_repeat_val": 0,
+      "natural_suspect_test": 0,
+      "exact_repeat_test": 2
+    },
+    "NYIS": {
+      "exact_repeat_hours": 5,
+      "exact_repeat_runs": 5,
+      "natural_suspect_hours": 0,
+      "natural_suspect_train": 0,
+      "exact_repeat_train": 3,
+      "natural_suspect_val": 0,
+      "exact_repeat_val": 0,
+      "natural_suspect_test": 0,
+      "exact_repeat_test": 2
+    },
+    "PJM": {
+      "exact_repeat_hours": 0,
+      "exact_repeat_runs": 0,
+      "natural_suspect_hours": 1,
+      "natural_suspect_train": 0,
+      "exact_repeat_train": 0,
+      "natural_suspect_val": 0,
+      "exact_repeat_val": 0,
+      "natural_suspect_test": 1,
+      "exact_repeat_test": 0
+    },
+    "SWPP": {
+      "exact_repeat_hours": 394,
+      "exact_repeat_runs": 19,
+      "natural_suspect_hours": 388,
+      "natural_suspect_train": 387,
+      "exact_repeat_train": 389,
+      "natural_suspect_val": 1,
+      "exact_repeat_val": 4,
+      "natural_suspect_test": 0,
+      "exact_repeat_test": 1
+    }
+  },
+  "inclusion_rules": [
+    "Canonical time index is the hour-ending UTC timestamp ('UTC Time at End of Hour'); rows are de-duplicated on (BA, UTC) only if exact duplicates (none found).",
+    "Reported 'Demand (MW)' is the analysis variable. Blank values are kept as missing (never zero-filled).",
+    "Non-positive reported demand (0 MW) is physically invalid for an interconnection-scale BA aggregate and is treated as naturally invalid (missing).",
+    "Naturally invalid hours are not scored, not labeled, and never used as injection sites.",
+    "Extreme positive demand values (e.g., heat-wave peaks) are retained; no outlier trimming of the background.",
+    "EIA 'Demand Forecast', 'Net Generation', and imputed/adjusted columns are not detector inputs (leakage/scope control); they are used only for the data-quality audit.",
+    "The first 14 days (336 h) of each series are a feature warm-up period and are excluded from model fitting."
+  ],
+  "sufficiency": {
+    "threshold": 0.8,
+    "lowest": {
+      "fraction": 0.983651,
+      "ba": "CISO",
+      "split": "test"
+    },
+    "pass": true
+  }
+}

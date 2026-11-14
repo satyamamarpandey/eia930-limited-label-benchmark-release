@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+.pytest_cache/
+_build/
+05_RESULTS/_reproduction_run/
+05_RESULTS/_resumption_test/
+05_RESULTS/camera_ready_extra/
+*.pyc
+03_DATA/raw/*.csv
+03_DATA/raw/*.part
+03_DATA/raw/*.mismatch
+02_MANUSCRIPT_SOURCE/figures/*.pdf
+02_MANUSCRIPT_SOURCE/generated/*.tex
+02_MANUSCRIPT_SOURCE/generated/*.json

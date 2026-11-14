@@ -1,0 +1,1 @@
+The EIA-930 files are downloaded by 04_CODE/scripts/download_data.py (see ../PROVENANCE.md); never commit them.
